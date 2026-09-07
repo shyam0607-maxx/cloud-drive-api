@@ -7,7 +7,7 @@ import { activityRepository } from "../repositories/activityRepository";
 import { ErrorResponses } from "../utils/errors";
 import { CreateShareInput, CreateLinkShareInput, AccessLinkShareInput } from "../validators/resources";
 import { v4 as uuidv4 } from "uuid";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 export class ShareService {
   async createShare(userId: string, input: CreateShareInput) {
