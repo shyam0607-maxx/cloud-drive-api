@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM node:22-alpine
 
 WORKDIR /app
 
@@ -9,7 +9,7 @@ RUN npm cache clean --force
 COPY package*.json ./
 
 # Install dependencies fresh
-RUN npm ci --no-cache
+RUN npm ci
 
 # Copy source code
 COPY . .
