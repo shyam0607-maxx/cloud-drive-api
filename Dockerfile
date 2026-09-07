@@ -2,11 +2,14 @@ FROM node:20-alpine
 
 WORKDIR /app
 
+# Clear npm cache upfront
+RUN npm cache clean --force
+
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies (including dev for tsx)
-RUN npm ci
+# Install dependencies fresh
+RUN npm ci --no-cache
 
 # Copy source code
 COPY . .
@@ -14,5 +17,6 @@ COPY . .
 # Expose port
 EXPOSE 8080
 
-# Start application with tsx
-CMD ["npx", "tsx", "src/server.ts"]
+# Make absolutely sure we run tsx, not npm start
+ENTRYPOINT ["npx"]
+CMD ["tsx", "src/server.ts"]
