@@ -6,11 +6,12 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
-    "start": "npm run build && node dist/server.js",
+    "start": "tsx src/server.ts",
     "test": "jest --detectOpenHandles",
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "tsx": "^4.7.0",
     "@supabase/supabase-js": "^2.38.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
