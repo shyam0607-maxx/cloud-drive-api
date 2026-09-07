@@ -5,8 +5,8 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --omit=dev
+# Install dependencies (including dev for tsx)
+RUN npm ci
 
 # Copy source code
 COPY . .
@@ -14,5 +14,5 @@ COPY . .
 # Expose port
 EXPOSE 8080
 
-# Start application
-CMD ["npm", "start"]
+# Start application with tsx
+CMD ["npx", "tsx", "src/server.ts"]
