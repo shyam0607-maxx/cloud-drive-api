@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import { config } from "../config/env";
 import { JWTPayload, RefreshTokenPayload, AuthTokens } from "../types";
 import { v4 as uuidv4 } from "uuid";
