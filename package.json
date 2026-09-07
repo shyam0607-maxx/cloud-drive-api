@@ -1,48 +1,38 @@
 {
   "name": "cloud-drive-api",
   "version": "1.0.0",
-  "description": "Cloud Drive API - Backend for media/file storage service",
+  "description": "Cloud Drive REST API",
   "main": "dist/server.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js",
+    "start": "npm run build && node dist/server.js",
     "test": "jest --detectOpenHandles",
-    "test:watch": "jest --watch",
-    "lint": "eslint src --ext .ts",
-    "type-check": "tsc --noEmit",
-    "format": "prettier --write \"src/**/*.ts\""
+    "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.38.0",
-    "bcrypt": "^5.1.0",
+    "@supabase/supabase-js": "^2.39.6",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
     "express-rate-limit": "^7.5.1",
-    "jsonwebtoken": "^9.0.2",
-    "multer": "^1.4.5-lts.1",
+    "jsonwebtoken": "^9.1.2",
     "uuid": "^9.0.0",
-    "zod": "^3.22.0"
+    "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@types/bcrypt": "^5.0.2",
-    "@types/express": "^4.17.21",
-    "@types/jest": "^29.5.11",
+    "@types/express": "^4.17.20",
+    "@types/jest": "^29.5.7",
     "@types/jsonwebtoken": "^9.0.5",
-    "@types/multer": "^1.4.11",
-    "@types/node": "^20.10.6",
-    "@types/supertest": "^6.0.2",
-    "@types/uuid": "^9.0.7",
-    "@typescript-eslint/eslint-plugin": "^6.17.0",
-    "@typescript-eslint/parser": "^6.17.0",
-    "eslint": "^8.56.0",
+    "@types/node": "^20.9.0",
     "jest": "^29.7.0",
-    "prettier": "^3.1.1",
-    "supertest": "^6.3.3",
     "ts-jest": "^29.1.1",
-    "tsx": "^4.7.0",
-    "typescript": "^5.3.3"
+    "tsx": "^4.1.0",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }
